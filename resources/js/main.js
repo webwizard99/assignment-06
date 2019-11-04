@@ -3,6 +3,7 @@ import storeitems from './storeitems.js';
 document.addEventListener('onload', () => {
   storeitems.initTestItems(40);
   const items = storeitems.getItems();
+  console.log(items);
   const storeFrame = document.querySelector('.store-frame');
   items.forEach((item, itemN) => {
     storeFrame.innerHTML += `
