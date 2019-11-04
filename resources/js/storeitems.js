@@ -8,6 +8,8 @@ const storeitems = (function(){
     this.price = price;
   }
 
+  const flavors = [ 'Mint', 'Peppermint', 'Frankincense', 'Lavender', 'Tea Tree', 'Lemon', 'Sage', 'Clove'];
+
   return {
     getItems: function() {
       return items;
@@ -20,11 +22,12 @@ const storeitems = (function(){
     initTestItems: function(n) {
       // if (items != []) return;
       for (let i = 0; i < n; i++) {
-        let newItem = new item('../media/joanna-kosinska-Prfs32wh-o4-unsplash.jpg', 'A spoon-full of salt', 'Mint Salt', '$6.97');
-        console.log(newItem);
+        let flavor = Math.floor(Math.random() * flavors.length);
+        let cost = Number.parseFloat(Math.random() * 2).toFixed(2) + 4;
+        let newItem = new item('../media/joanna-kosinska-Prfs32wh-o4-unsplash.jpg', 'A spoon-full of salt', `${flavors[flavor]} Salt`, `$${cost}`);
         items.push(newItem);
       }
-      console.log(items);
+      
     }
 
   }
