@@ -23,7 +23,8 @@ const storeitems = (function(){
       // if (items != []) return;
       for (let i = 0; i < n; i++) {
         let flavor = Math.floor(Math.random() * flavors.length);
-        let cost = 4 + Number.parseFloat(Math.random() * 2).toFixed(2);
+        let cost = Number.parseFloat(Math.random() * 2).toFixed(2);
+        cost += 4.00;
         let newItem = new item('../media/joanna-kosinska-Prfs32wh-o4-unsplash.jpg', 'A spoon-full of salt', `${flavors[flavor]} Salt`, `$${cost}`);
         items.push(newItem);
       }
