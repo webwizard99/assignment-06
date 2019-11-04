@@ -1,12 +1,12 @@
 import storeitems from './storeitems.js';
 
 document.addEventListener('onload', () => {
-  storeitems.initTestItems();
+  storeitems.initTestItems(40);
   const items = storeitems.getItems();
   const storeFrame = document.querySelector('.store-frame');
-  items.forEach(item => {
+  items.forEach((item, itemN) => {
     storeFrame.innerHTML += `
-    <div class="store-item">
+    <div class="store-item" key="${itemN}">
         <div class="item-pic" style={ background-image: ${item.img}}>
           <p class="reader">${item.alt}</p>
         </div>
@@ -15,5 +15,5 @@ document.addEventListener('onload', () => {
         <p class="item-price">${item.price}</p>
       </div>
     `
-  })
+  });
 });
